@@ -1,0 +1,89 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block styling %}
+<style>
+.certificates {
+    text-align: center;
+    padding: 2rem;
+}
+
+.cert-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.cert-item {
+    background: #1a202c;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.cert-logo {
+    max-width: 100px;
+    margin-bottom: 1rem;
+}
+
+.cert-item h3 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.cert-item p {
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.cert-btn {
+    display: inline-block;
+    background: #4fd1c5;
+    color: black;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.cert-btn:hover {
+    background: #38b2ac;
+}
+</style>
+{% endblock styling %}
+{% block content %}
+<section class="certificates">
+    <h2>Certificates</h2>
+    <div class="cert-list">
+
+        <div class="cert-item">
+            <img src="{% static 'img/meta-django.svg' %}" alt="Meta Django Certificate" class="cert-logo">
+            <h3>Meta – Django Web Framework</h3>
+            <p>Coursera · Completed</p>
+            <a href="https://coursera.org/share/c330ffb2b3da919f38ef5d3d78526e8c" target="_blank" class="cert-btn">View Certificate</a>
+        </div>
+
+        <div class="cert-item">
+            <img src="{% static 'img/ibm-python.svg' %}" alt="IBM Python Certificate" class="cert-logo">
+            <h3>IBM – Complete Python for Beginners</h3>
+            <p>Coursera · Completed</p>
+            <a href="https://www.coursera.org/account/accomplishments/verify/VEJWC1GT2Z18?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=course" target="_blank" class="cert-btn">View Certificate</a>
+        </div>
+
+        <div class="cert-item">
+            <img src="{% static 'img/flask-project.png' %}" alt="Flask Web App Certificate" class="cert-logo">
+            <h3>Coursera Project Network – Create Your Web App with Python and Flask</h3>
+            <p>Coursera · Completed</p>
+            <a href="https://www.coursera.org/account/accomplishments/verify/04ZMKOW4Q85B?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=project" target="_blank" class="cert-btn">View Certificate</a>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

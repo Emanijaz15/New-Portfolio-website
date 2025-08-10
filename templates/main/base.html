@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eman Portfolio</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<style>
+/* Footer Styling */
+#footer {
+    background: #1e1e2f; /* Dark navy background */
+    padding: 40px 20px 20px;
+    color: white;
+    text-align: center;
+}
+
+/* Navigation links */
+#footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#footer ul li a {
+    text-decoration: none;
+    color: #cbd5e1;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#footer ul li a:hover {
+    color: #4fd1c5;
+    transform: translateY(-3px);
+}
+
+/* Social icons */
+#footer .font-awesome a {
+    color: white;
+    font-size: 1.3rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#footer .font-awesome a:hover {
+    color: #4fd1c5;
+    transform: scale(1.2);
+}
+
+/* Copyright text */
+#footer p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #footer ul {
+        gap: 15px;
+    }
+
+    #footer ul li a {
+        font-size: 0.95rem;
+    }
+
+    #footer .font-awesome a {
+        font-size: 1.2rem;
+    }
+}
+
+
+
+    {% block styling %}{% endblock styling %}
+</style>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo"><a href="/">Eman Portfolio</a></div>
+                <div class="hamburger" id="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul id="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about/">About Me</a></li>
+                    <li><a href="/skills/">Skills</a></li>
+                    <li><a href="/projects/">Projects</a></li>
+                    <li><a href="/certificates/">Certificates</a></li>
+                    <li><a href="/contact/">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+         <footer id="footer">
+        <ul class="flex s-center w-80 m-auto my-2 res">
+            <li><a href="/" class="poppinss">Home</a></li>
+            <li><a href="/about" class="poppinss">About</a></li>
+            <li><a href="/skills" class="poppinss">Skills</a></li>
+            <li><a href="/projects" class="poppinss">Projects</a></li>
+            <li><a href="/certificates/" class="poppinss">Certificates</a></li>
+        </ul>
+        <ul class="flex s-center w-80 font-awesome ">
+            <a href="https://www.linkedin.com/in/eman-ijaz-960017370" target="_blank">
+                <li><i class="fa-brands fa-linkedin-in"></i></li>
+            </a>
+            <a href="https://github.com/Emanijaz15" target="_blank">
+                <li><i class="fa-brands fa-github"></i></li>
+            </a>
+                <a href="https://leetcode.com/u/Eman_Engineer786/" target="_blank">
+                    <li><i class="fa-solid fa-code"></i></li>
+            </a>
+           
+        </ul>
+        <p class="t-center my-2 poppins">&copy;<span id="year"></span> Eman Ijaz - All Rights Reserved ·<span class="cpy-white poppins">
+                </span></p>
+
+    </footer>
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        const hamburger = document.getElementById('hamburger-menu');
+        const navLinks = document.getElementById('nav-links');
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+            hamburger.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

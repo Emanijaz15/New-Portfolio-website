@@ -1,0 +1,160 @@
+{% extends 'main/base.html' %}
+{% block styling %}
+<style>
+    .skills {
+    padding: 40px 20px;
+    background: #f9f9f9;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.skills h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skill-category {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 20px 30px;
+    width: 220px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.skill-category h3 {
+    color: #000;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-category li {
+    background: #4fd1c5;
+    margin: 5px 0;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #333;
+    transition: background 0.3s ease;
+}
+
+.skill-category li:hover {
+    background: #d6e4ff;
+}
+
+/* 📱 Responsive styles */
+@media (max-width: 768px) {
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill-category {
+        width: 90%;
+    }
+}
+
+</style>
+{% endblock styling %}
+{% block content %}
+<section class="skills">
+    <h2>Programming</h2>
+    <ul class="skills-list">
+        <li>Python</li>
+        <li>JavaScript</li>
+        <li>C++</li>
+    </ul>
+</section>
+<section class="skills">
+    <h2>Web Skills</h2>
+    <ul class="skills-list">
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>React.js</li>
+        <li>Flask</li>
+        <li>Django</li>
+    </ul>
+</section>
+<section class="skills">
+    <h2>Databases</h2>
+    <ul class="skills-list">
+        <li>MySQL</li>
+        <li>SQLite</li>
+        <li>MongoDB</li>
+    </ul>
+</section>
+<section class="skills">
+    <h2>Tools</h2>
+    <ul class="skills-list">
+        <li>Git</li>
+        <li>GitHub</li>
+        <li>VS Code</li>
+        <li>PyCharm</li>
+    </ul>
+</section>
+<section class="skills">
+    <h2>Frameworks</h2>
+    <ul class="skills-list">
+        <li>Tailwind CSS</li>
+        <li>Bootstrap</li>
+        <li>React</li>
+        <li>Flask</li>
+        <li>Django</li>
+    </ul>
+</section>
+<section class="skills">
+    <h2>Libraries & Tools</h2>
+    <div class="skills-container">
+        <div class="skill-category">
+            <h3>Web Scraping</h3>
+            <ul>
+                <li>BeautifulSoup (bs4)</li>
+                <li>Selenium</li>
+            </ul>
+        </div>
+        <div class="skill-category">
+            <h3>Data Analysis</h3>
+            <ul>
+                <li>Pandas</li>
+                <li>NumPy</li>
+            </ul>
+        </div>
+        <div class="skill-category">
+            <h3>Computer Vision</h3>
+            <ul>
+                <li>OpenCV</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="skills">
+    <h2>Soft Skills</h2>
+    <ul class="skills-list">
+        <li>Problem Solving</li>
+        <li>Communication</li>
+        <li>Team Collaboration</li>
+        <li>Time Management</li>
+    </ul>
+</section>
+
+{% endblock %}
